@@ -60,8 +60,8 @@ ADD https://raw.githubusercontent.com/evenup/evenup-graphite_reporter/master/lib
 VOLUME ["/etc/puppetlabs/code/environments","/etc/puppetlabs/puppet/ssl"]
 
 # Configure cert autosign
-COPY check_csr.rb /
-RUN puppet config set autosign /check_csr.rb --section master
+COPY check_csr.sh /
+RUN puppet config set autosign /check_csr.sh --section master
 
 # RUNTIME
 COPY /docker-entrypoint.sh /
